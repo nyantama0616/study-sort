@@ -4,7 +4,8 @@
 const ll N = 1000;
 // const function<void(V&)> sort_fn = bubble_sort;
 // const function<void(V&)> sort_fn = select_sort;
-const function<void(V&)> sort_fn = insert_sort;
+// const function<void(V&)> sort_fn = insert_sort;
+const function<void(V&)> sort_fn = shell_sort;
 
 /*
 TODO:
@@ -40,9 +41,11 @@ void test_sort(V v, function<void(V&)> sort_fn);
 
 //🦋Fight🦋
 
+RandomManager rm;
+
 int main() {
-    RandomManager rm;
     V a = {-100, -58, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 20, 35, 41};
+    // V a = {0, 1, 2, 3, 4};2
     rep(i, N) {
         test_sort(a, sort_fn);
     }
@@ -50,7 +53,6 @@ int main() {
 }
 
 void test_sort(V v, function<void(V&)> sort_fn) {
-    RandomManager rm;
     ll n = v.size();
     rm.shuffle(v);
 
