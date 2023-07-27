@@ -1,5 +1,12 @@
 #include "../template.h"
 
+/*
+挿入ソートの「ほとんどソートされている配列を高速でソートできる性質」を利用したもの
+最悪計算量(n^2)
+不安定なソート
+参考: https://ufcpp.net/study/algorithm/sort_shell.html
+*/
+
 void shell_sort(V& v) {
     const ll n = v.size();
 
